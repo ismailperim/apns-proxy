@@ -1,0 +1,9 @@
+services:
+  apns-proxy:
+    image: ghcr.io/ismailperim/apns-proxy:latest
+    ports:
+      - "${PORT:-3456}:${PORT:-3456}"
+    environment:
+      - PORT=${PORT:-3456}
+      - APNS_ENV=${APNS_ENV:-production}
+    restart: unless-stopped
